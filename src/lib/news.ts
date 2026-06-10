@@ -8,7 +8,7 @@ type NewsFrontmatter = Omit<NewsArticle, "slug" | "content">;
 export function getAllNews() {
   return getMarkdownFiles(newsDirectory)
     .map((file) => readMarkdownFile<NewsFrontmatter>(newsDirectory, file))
-    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+    .sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
 export function getLatestNews(limit = 3) {

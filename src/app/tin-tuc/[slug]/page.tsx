@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllNews, getNewsWithHtml } from "@/lib/news";
 
@@ -14,7 +16,7 @@ export async function generateMetadata({ params }: NewsDetailProps) {
   const article = await getNewsWithHtml(slug);
 
   return {
-    title: article?.title ?? "Tin tuc",
+    title: article?.title ?? "Tin tức",
     description: article?.description,
   };
 }
@@ -28,14 +30,28 @@ export default async function NewsDetailPage({ params }: NewsDetailProps) {
   }
 
   return (
-    <article className="detail-page narrow">
-      <p className="eyebrow">{article.category}</p>
-      <h1>{article.title}</h1>
-      <p>{article.description}</p>
-      <time dateTime={article.date}>
-        {new Intl.DateTimeFormat("vi-VN").format(new Date(article.date))}
-      </time>
-      <div className="prose" dangerouslySetInnerHTML={{ __html: article.content }} />
+    <article className="news-detail-page">
+      <Link className="back-link" href="/tin-tuc">
+        ← Quay lại danh sách tin tức
+      </Link>
+      <header className="news-detail-hero">
+        <Image
+          src={article.image}
+          alt={article.title}
+          fill
+          priority
+          sizes="(max-width: 900px) 100vw, 900px"
+        />
+        <div>
+          <p className="eyebrow">Tin tức</p>
+          <h1>{article.title}</h1>
+        </div>
+      </header>
+      <section className="news-summary">
+        <span>Tóm tắt</span>
+        <p>{article.description}</p>
+      </section>
+      <div className="prose news-prose" dangerouslySetInnerHTML={{ __html: article.content }} />
     </article>
   );
 }
