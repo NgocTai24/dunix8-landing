@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { NewsGrid } from "@/components/news/NewsGrid";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { SectionTitle } from "@/components/common/SectionTitle";
@@ -8,53 +8,56 @@ import { getLatestNews } from "@/lib/news";
 import { getFeaturedProducts } from "@/lib/products";
 
 const strengths = [
-  "Cong nghe lam sach bot it, xa nhanh",
-  "Huong thom diu cho khong gian song hien dai",
-  "Bao bi lon, toi uu chi phi cho gia dinh",
+  "Làm sạch hiệu quả, dễ sử dụng mỗi ngày",
+  "Hương thơm dịu nhẹ, phù hợp gia đình Việt",
+  "Bao bì rõ ràng, thuận tiện cho đại lý tư vấn",
 ];
 
 const catalogueItems = [
   {
     src: "/images/about/catalogue-giat-xa.webp",
-    title: "Giat xa",
+    title: "Giặt xả",
+    description: "Nước giặt, nước xả và combo chăm sóc quần áo.",
   },
   {
     src: "/images/about/catalogue-lau-san.webp",
-    title: "Lau san",
+    title: "Lau sàn",
+    description: "Giải pháp làm sạch sàn nhà, giữ không gian thơm mát.",
   },
   {
     src: "/images/about/catalogue-rua-chen.webp",
-    title: "Rua chen",
+    title: "Rửa chén",
+    description: "Sản phẩm làm sạch gian bếp với hương thơm tự nhiên.",
   },
 ];
 
 export default function Home() {
-  const products = getFeaturedProducts();
+  const products = getFeaturedProducts().slice(0, 3);
   const news = getLatestNews(3);
 
   return (
     <>
-      <section className="hero">
+      <section className="hero home-hero">
         <div className="hero-copy">
-          <p className="eyebrow">Dunix8 laundry care</p>
+          <p className="eyebrow">Dunix8 chăm sóc nhà cửa</p>
           <h1>{site.name}</h1>
           <p>
-            Giai phap giat xa va cham soc nha cua voi hinh anh tuoi sang, sach
-            se, phu hop cho gia dinh va dai ly.
+            Giải pháp giặt xả và chăm sóc nhà cửa với hình ảnh tươi sáng, sạch
+            sẽ, phù hợp cho gia đình và đại lý.
           </p>
           <div className="hero-actions">
             <Link className="button primary" href="/san-pham">
-              Xem san pham
+              Xem sản phẩm
             </Link>
             <Link className="button ghost" href="/lien-he">
-              Nhan bao gia
+              Nhận tư vấn
             </Link>
           </div>
         </div>
-        <div className="hero-media" aria-label="Catalogue san pham Dunix8">
+        <div className="hero-media home-hero-media" aria-label="Catalogue sản phẩm Dunix8">
           <Image
             src="/images/about/catalogue-cover.webp"
-            alt="Catalogue gioi thieu san pham Dunix8"
+            alt="Catalogue giới thiệu sản phẩm Dunix8"
             fill
             priority
             sizes="(max-width: 900px) 100vw, 46vw"
@@ -62,13 +65,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section home-products">
+        <div className="section-heading-row">
+          <SectionTitle
+            eyebrow="Sản phẩm nổi bật"
+            title="Một vài lựa chọn đang được quan tâm"
+            description="Trang chủ chỉ hiển thị một số sản phẩm tiêu biểu. Bạn có thể vào trang sản phẩm để xem đầy đủ danh mục Dunix8."
+          />
+          <Link className="section-link" href="/san-pham">
+            Xem tất cả sản phẩm
+          </Link>
+        </div>
+        <ProductGrid products={products} />
+      </section>
+
       <section className="section catalogue-section">
         <SectionTitle
-          eyebrow="Bo san pham"
-          title="Hinh anh gioi thieu da san sang de dung cho landing page"
-          description="Cac anh trong thu muc about duoc dat vao nhung vung noi bat de nguoi xem thay ngay nhom san pham Dunix8."
+          eyebrow="Danh mục chính"
+          title="Hệ sản phẩm chăm sóc nhà cửa Dunix8"
+          description="Các nhóm sản phẩm được trình bày bằng hình ảnh catalogue rõ ràng để khách hàng dễ nhận diện."
         />
-        <div className="catalogue-grid">
+        <div className="catalogue-grid home-catalogue-grid">
           {catalogueItems.map((item) => (
             <article className="catalogue-card" key={item.src}>
               <Image
@@ -77,19 +94,13 @@ export default function Home() {
                 fill
                 sizes="(max-width: 900px) 100vw, 33vw"
               />
-              <strong>{item.title}</strong>
+              <div>
+                <strong>{item.title}</strong>
+                <p>{item.description}</p>
+              </div>
             </article>
           ))}
         </div>
-      </section>
-
-      <section className="section">
-        <SectionTitle
-          eyebrow="San pham noi bat"
-          title="Giat sach, xa mem trong mot he sinh thai cham soc vai"
-          description="Danh muc Dunix8 duoc viet san bang markdown, de cap nhat hinh anh, gia va noi dung SEO."
-        />
-        <ProductGrid products={products} />
       </section>
 
       <section className="feature-band">
@@ -103,8 +114,8 @@ export default function Home() {
 
       <section className="section">
         <SectionTitle
-          eyebrow="Meo cham soc quan ao"
-          title="Noi dung huu ich de tang niem tin va SEO"
+          eyebrow="Góc chăm sóc nhà cửa"
+          title="Mẹo nhỏ giúp giặt xả và vệ sinh hiệu quả hơn"
         />
         <NewsGrid articles={news} />
       </section>

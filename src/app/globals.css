@@ -332,6 +332,29 @@ p {
   object-fit: cover;
 }
 
+.home-hero {
+  align-items: center;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.05fr);
+  padding-top: clamp(74px, 10vw, 140px);
+}
+
+.home-hero .hero-copy h1 {
+  font-size: clamp(70px, 8.8vw, 136px);
+}
+
+.home-hero-media {
+  aspect-ratio: 1.72;
+  background:
+    radial-gradient(circle at 50% 95%, rgba(107, 53, 201, 0.1), transparent 28%),
+    linear-gradient(180deg, #ffffff, #f3f9ff);
+  min-height: 0;
+}
+
+.home-hero-media img {
+  object-fit: contain;
+  padding: clamp(10px, 1.6vw, 24px);
+}
+
 .bottle {
   align-items: center;
   aspect-ratio: 0.58;
@@ -400,6 +423,30 @@ p {
 .section-title {
   max-width: 820px;
   margin-bottom: 34px;
+}
+
+.section-heading-row {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+.section-heading-row .section-title {
+  margin-bottom: 0;
+}
+
+.section-link {
+  align-items: center;
+  border: 1px solid rgba(107, 53, 201, 0.24);
+  border-radius: 999px;
+  color: var(--purple);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-weight: 900;
+  min-height: 44px;
+  padding: 0 18px;
 }
 
 .product-grid,
@@ -931,6 +978,31 @@ p {
   z-index: 1;
 }
 
+.catalogue-card div {
+  bottom: 16px;
+  color: var(--white);
+  left: 16px;
+  position: absolute;
+  right: 16px;
+  z-index: 1;
+}
+
+.catalogue-card div strong {
+  bottom: auto;
+  display: block;
+  left: auto;
+  margin-bottom: 6px;
+  position: static;
+  right: auto;
+}
+
+.catalogue-card div p {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
 .about-gallery {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 34px;
@@ -1273,6 +1345,19 @@ p {
     max-height: none;
   }
 
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-media {
+    aspect-ratio: 1.35;
+  }
+
   .value-grid,
   .product-line-grid,
   .stats-grid {
@@ -1329,6 +1414,14 @@ p {
 
   .hero-media {
     min-height: 340px;
+  }
+
+  .home-hero .hero-copy h1 {
+    font-size: 58px;
+  }
+
+  .home-hero-media {
+    min-height: 260px;
   }
 
   .bottle {
