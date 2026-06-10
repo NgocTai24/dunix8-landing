@@ -5,7 +5,6 @@ category: "Nuoc xa"
 categorySlug: "nuoc-xa"
 volume: "3.6L"
 fragrance: "Huong hoa diu"
-price: "Lien he"
 image: "/images/about/catalogue-cover.webp"
 featured: true
 benefits:

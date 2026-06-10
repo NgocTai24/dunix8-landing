@@ -26,8 +26,8 @@ export function ProductCard({ product }: ProductCardProps) {
         <p>{product.description}</p>
       </div>
       <div className="product-meta">
+        <span>{product.volume}</span>
         <span>{product.fragrance}</span>
-        <strong>{product.price}</strong>
       </div>
     </article>
   );

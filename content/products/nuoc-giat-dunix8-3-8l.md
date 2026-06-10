@@ -5,7 +5,6 @@ category: "Nuoc giat"
 categorySlug: "nuoc-giat"
 volume: "3.8L"
 fragrance: "Huong nang mai"
-price: "Lien he"
 image: "/images/about/catalogue-giat-xa.webp"
 featured: true
 benefits:

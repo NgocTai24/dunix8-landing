@@ -37,7 +37,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <p>{product.description}</p>
           <div className="product-meta large">
             <span>{product.volume}</span>
-            <strong>{product.price}</strong>
+            <span>{product.fragrance}</span>
           </div>
         </div>
         <div className="detail-product-media">

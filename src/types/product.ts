@@ -6,7 +6,6 @@ export type Product = {
   categorySlug: string;
   volume: string;
   fragrance: string;
-  price: string;
   image: string;
   featured: boolean;
   benefits: string[];

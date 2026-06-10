@@ -1,17 +1,30 @@
 export const categories = [
   {
-    name: "Nuoc giat",
+    name: "Nước giặt cao cấp",
     slug: "nuoc-giat",
-    description: "Lam sach sau, giu mau vai va phu hop giat may moi ngay.",
+    description: "Làm sạch sâu, giữ màu vải và phù hợp giặt máy mỗi ngày.",
   },
   {
-    name: "Nuoc xa",
-    slug: "nuoc-xa",
-    description: "Huong thom diu, giup vai mem hon va de ui phang.",
+    name: "Nước rửa chén",
+    slug: "nuoc-rua-chen",
+    description:
+      "Tẩy sạch dầu mỡ cứng đầu, an toàn cho da tay và đồ dùng bếp.",
   },
   {
-    name: "Combo cham soc vai",
-    slug: "combo",
-    description: "Giai phap giat xa tron bo cho gia dinh ban ron.",
+    name: "Nước rửa tay",
+    slug: "nuoc-rua-tay",
+    description:
+      "Khử khuẩn vượt trội, giữ cho da tay mềm mại và thơm ngát suốt ngày.",
   },
+  {
+    name: "Nước lau sàn",
+    slug: "nuoc-lau-san",
+    description:
+      "Đánh bật vết bẩn, phù hợp nhiều loại sàn và lưu hương dài lâu.",
+  },
+  {
+    name: "Nước tẩy toilet",
+    slug: "nuoc-tay-toilet",
+    description: "Diệt khuẩn mạnh mẽ, đánh bay vết ố, khử mùi hiệu quả.",
+  }
 ];
