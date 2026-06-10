@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: ProductPageProps) {
   const product = await getProductWithHtml(slug);
 
   return {
-    title: product?.title ?? "San pham",
+    title: product?.title ?? "Sản phẩm",
     description: product?.description,
   };
 }
@@ -29,9 +29,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
-    <article className="detail-page">
-      <div className="detail-hero">
-        <div>
+    <article className="detail-page product-detail-page">
+      <div className="detail-hero product-detail-hero">
+        <div className="detail-copy">
           <p className="eyebrow">{product.category}</p>
           <h1>{product.title}</h1>
           <p>{product.description}</p>
@@ -49,12 +49,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
           />
         </div>
       </div>
-      <ul className="benefit-list">
-        {product.benefits.map((benefit) => (
-          <li key={benefit}>{benefit}</li>
-        ))}
-      </ul>
-      <div className="prose" dangerouslySetInnerHTML={{ __html: product.content }} />
+      <section className="detail-content-grid">
+        <aside className="detail-benefits">
+          <h2>Lợi ích nổi bật</h2>
+          <ul className="benefit-list">
+            {product.benefits.map((benefit) => (
+              <li key={benefit}>{benefit}</li>
+            ))}
+          </ul>
+        </aside>
+        <div className="prose" dangerouslySetInnerHTML={{ __html: product.content }} />
+      </section>
     </article>
   );
 }

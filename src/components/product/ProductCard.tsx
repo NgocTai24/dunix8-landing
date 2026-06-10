@@ -18,16 +18,21 @@ export function ProductCard({ product }: ProductCardProps) {
         />
         <span>{product.volume}</span>
       </Link>
-      <div>
+      <div className="product-card-body">
         <p className="eyebrow">{product.category}</p>
         <h3>
           <Link href={`/san-pham/${product.slug}`}>{product.title}</Link>
         </h3>
         <p>{product.description}</p>
       </div>
-      <div className="product-meta">
-        <span>{product.volume}</span>
-        <span>{product.fragrance}</span>
+      <div className="product-card-footer">
+        <div className="product-meta">
+          <span>{product.volume}</span>
+          <span>{product.fragrance}</span>
+        </div>
+        <Link className="product-more" href={`/san-pham/${product.slug}`}>
+          Xem chi tiết
+        </Link>
       </div>
     </article>
   );
