@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllProducts, getProductWithHtml } from "@/lib/products";
 
@@ -39,11 +40,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <strong>{product.price}</strong>
           </div>
         </div>
-        <div className="hero-product compact" aria-hidden="true">
-          <div className="bottle">
-            <span>D8</span>
-            <strong>{product.volume}</strong>
-          </div>
+        <div className="detail-product-media">
+          <Image
+            src={product.image}
+            alt={product.title}
+            fill
+            sizes="(max-width: 900px) 100vw, 44vw"
+          />
         </div>
       </div>
       <ul className="benefit-list">

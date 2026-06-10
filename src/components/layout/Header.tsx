@@ -1,31 +1,58 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/data/site";
 
 const navItems = [
-  { href: "/", label: "Trang chu" },
-  { href: "/gioi-thieu", label: "Gioi thieu" },
-  { href: "/san-pham", label: "San pham" },
-  { href: "/tin-tuc", label: "Tin tuc" },
-  { href: "/lien-he", label: "Lien he" },
+  { href: "/", label: "Trang chủ" },
+  { href: "/gioi-thieu", label: "Giới thiệu" },
+  { href: "/san-pham", label: "Sản phẩm", hasDropdown: true },
+  { href: "/danh-muc/nuoc-giat", label: "Danh mục", hasDropdown: true },
+  { href: "/tin-tuc", label: "Tin tức" },
+  { href: "/lien-he", label: "Liên hệ" },
 ];
 
 export function Header() {
   return (
-    <header className="site-header">
-      <Link className="brand" href="/" aria-label="Dunix8 trang chu">
-        <span className="brand-mark">D8</span>
-        <span>{site.name}</span>
-      </Link>
-      <nav aria-label="Dieu huong chinh">
-        {navItems.map((item) => (
-          <Link href={item.href} key={item.href}>
-            {item.label}
+    <header className="header-shell">
+      <div className="topbar">
+        <p>Sạch sâu • Thơm lâu • An toàn cho cả gia đình</p>
+        <div>
+          <span>Hotline: {site.hotline}</span>
+          <span>Thứ 2 - Chủ nhật: 08:00 - 20:00</span>
+        </div>
+      </div>
+      <div className="site-header">
+        <Link className="brand" href="/" aria-label="Dunix8 trang chủ">
+          <Image
+            className="brand-logo"
+            src="/images/logo/logo.jpg"
+            alt="Logo Dunix8"
+            width={200}
+            height={150}
+            priority
+          />
+        </Link>
+        <nav aria-label="Điều hướng chính">
+          {navItems.map((item, index) => (
+            <Link
+              className={index === 0 ? "active" : ""}
+              href={item.href}
+              key={item.href}
+            >
+              {item.label}
+              {item.hasDropdown ? <span className="chevron">⌄</span> : null}
+            </Link>
+          ))}
+        </nav>
+        <div className="header-actions">
+          <button className="search-button" type="button" aria-label="Tìm kiếm">
+            <span>⌕</span>
+          </button>
+          <Link className="header-cta" href="/lien-he">
+            Tư vấn ngay
           </Link>
-        ))}
-      </nav>
-      <Link className="header-cta" href="/lien-he">
-        Tu van
-      </Link>
+        </div>
+      </div>
     </header>
   );
 }

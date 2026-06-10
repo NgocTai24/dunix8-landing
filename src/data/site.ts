@@ -1,16 +1,16 @@
 export const site = {
   name: "Dunix8",
   domain: "https://dunix8.com",
-  title: "Dunix8 - Nuoc giat xa chat luong cao",
-  tagline: "Sach sau, thom lau, diu nhe cho ca gia dinh",
+  title: "Dunix8 - Nước Giặt Xả Chất Lượng Cao",
+  tagline: "Sạch sâu, thơm lâu, dịu nhẹ cho cả gia đình",
   description:
-    "Dunix8 cung cap san pham nuoc giat, nuoc xa va combo giat xa chat luong cao, huong thom de chiu, phu hop cho gia dinh Viet.",
-  phone: "0900 888 168",
-  hotline: "0900 888 168",
-  zalo: "https://zalo.me/0900888168",
+    "Dunix8 cung cấp sản phẩm nước giặt, nước xả và combo giặt xả chất lượng cao, hương thơm dễ chịu, phù hợp cho gia đình Việt.",
+  phone: "036 7399 136",
+  hotline: "036 7399 136",
+  zalo: "https://zalo.me/0367399136",
   facebook: "https://facebook.com/dunix8",
-  email: "contact@dunix8.com",
-  address: "Viet Nam",
+  email: "cskh@dunix8.vn",
+  address: "Tân Luật, Công Chính, Thanh Hóa, Việt Nam",
 };
 
 export const siteConfig = site;

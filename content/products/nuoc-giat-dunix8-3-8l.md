@@ -6,7 +6,7 @@ categorySlug: "nuoc-giat"
 volume: "3.8L"
 fragrance: "Huong nang mai"
 price: "Lien he"
-image: "/images/products/nuoc-giat-dunix8-3-8l.png"
+image: "/images/about/catalogue-giat-xa.webp"
 featured: true
 benefits:
   - "Lam sach sau"
