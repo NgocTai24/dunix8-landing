@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { site } from "@/data/site";
 
 const navItems = [
   { href: "/", label: "Trang chủ", match: "exact" },
@@ -36,21 +35,14 @@ export function Header() {
 
   return (
     <header className="header-shell">
-      <div className="topbar">
-        <p>Sạch sâu • Thơm lâu • An toàn cho cả gia đình</p>
-        <div>
-          <span>Hotline: {site.hotline}</span>
-          <span>Thứ 2 - Chủ nhật: 08:00 - 20:00</span>
-        </div>
-      </div>
       <div className="site-header">
         <Link className="brand" href="/" aria-label="Dunix8 trang chủ">
           <Image
             className="brand-logo"
             src="/images/logo/logo.jpg"
             alt="Logo Dunix8"
-            width={220}
-            height={150}
+            width={190}
+            height={86}
             priority
           />
         </Link>

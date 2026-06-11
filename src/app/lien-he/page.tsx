@@ -1,34 +1,80 @@
 import { site } from "@/data/site";
 
 export const metadata = {
-  title: "Lien he",
+  title: "Liên hệ",
 };
+
+const contactCards = [
+  {
+    label: "Số điện thoại",
+    value: site.hotline,
+    icon: "☎",
+  },
+  {
+    label: "Email",
+    value: "phanphoi@dunix8.vn",
+    icon: "✉",
+  },
+  {
+    label: "Thời gian làm việc",
+    value: "T2 - T7: 8:00 - 17:30",
+    icon: "◷",
+  },
+];
 
 export default function ContactPage() {
   return (
     <section className="contact-page">
-      <div>
-        <p className="eyebrow">Lien he phan phoi</p>
-        <h1>Can bao gia hoac tu van dai ly Dunix8?</h1>
+      <div className="contact-copy">
+        <p className="contact-badge">Liên hệ phân phối</p>
+        <h1>
+          Cần báo giá hoặc tư vấn đại lý <span>Dunix8?</span>
+        </h1>
         <p>
-          Gui thong tin nhu cau, khu vuc ban hang va san luong du kien. Doi ngu
-          Dunix8 se phan hoi voi chinh sach phu hop.
+          Gửi thông tin nhu cầu, khu vực bạn đang hoạt động và sản lượng dự kiến.
+          Đội ngũ Dunix8 sẽ phản hồi nhanh chóng với chính sách phù hợp nhất
+          dành cho bạn.
         </p>
+        <div className="contact-divider" />
+        <div className="contact-info-grid">
+          {contactCards.map((item) => (
+            <article className="contact-info-card" key={item.label}>
+              <span>{item.icon}</span>
+              <div>
+                <strong>{item.label}</strong>
+                <p>{item.value}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
+
       <form className="contact-form">
+        <div className="contact-form-heading">
+          <span>✈</span>
+          <h2>Gửi yêu cầu liên hệ</h2>
+        </div>
         <label>
-          Ho ten
-          <input name="name" placeholder="Nguyen Van A" />
+          Họ tên
+          <input name="name" placeholder="Nhập họ và tên của bạn" />
         </label>
         <label>
-          So dien thoai
-          <input name="phone" placeholder={site.phone} />
+          Số điện thoại
+          <input name="phone" placeholder="Nhập số điện thoại" />
         </label>
         <label>
-          Noi dung
-          <textarea name="message" placeholder="Toi muon nhan bao gia san pham..." />
+          Email
+          <input name="email" placeholder="Nhập email của bạn" />
         </label>
-        <button type="submit">Gui yeu cau</button>
+        <label>
+          Nội dung
+          <textarea
+            name="message"
+            placeholder="Tôi muốn nhận báo giá sản phẩm, chính sách đại lý..."
+          />
+        </label>
+        <button type="submit">Gửi yêu cầu</button>
+        <p className="contact-safe-note">Thông tin của bạn được bảo mật tuyệt đối.</p>
       </form>
     </section>
   );

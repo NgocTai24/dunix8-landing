@@ -31,6 +31,12 @@ const catalogueItems = [
   },
 ];
 
+const heroStats = [
+  { value: "6X", label: "Sức mạnh làm sạch" },
+  { value: "08h", label: "Tư vấn mỗi ngày" },
+  { value: "3+", label: "Nhóm sản phẩm chính" },
+];
+
 export default function Home() {
   const products = getFeaturedProducts().slice(0, 3);
   const news = getLatestNews(3);
@@ -42,8 +48,8 @@ export default function Home() {
           <p className="eyebrow">Dunix8 chăm sóc nhà cửa</p>
           <h1>{site.name}</h1>
           <p>
-            Giải pháp giặt xả và chăm sóc nhà cửa với hình ảnh tươi sáng, sạch
-            sẽ, phù hợp cho gia đình và đại lý.
+            Giải pháp giặt xả và vệ sinh gia dụng với hình ảnh tươi sáng, sạch
+            sẽ, phù hợp cho gia đình Việt và hệ thống đại lý.
           </p>
           <div className="hero-actions">
             <Link className="button primary" href="/san-pham">
@@ -53,15 +59,42 @@ export default function Home() {
               Nhận tư vấn
             </Link>
           </div>
+          <div className="hero-stats">
+            {heroStats.map((item) => (
+              <div key={item.label}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="hero-media home-hero-media" aria-label="Catalogue sản phẩm Dunix8">
-          <Image
-            src="/images/about/catalogue-cover.webp"
-            alt="Catalogue giới thiệu sản phẩm Dunix8"
-            fill
-            priority
-            sizes="(max-width: 900px) 100vw, 46vw"
-          />
+
+        <div className="hero-media home-hero-media" aria-label="Sản phẩm nổi bật Dunix8">
+          <div className="hero-product-stage">
+            <span className="floating-badge">Sạch sâu • Thơm lâu</span>
+            <Image
+              className="hero-product hero-product-main"
+              src="/images/products/nuoc_giat_dunix8_hygien_3kg.jpg"
+              alt="Nước giặt Dunix8 Hygien 3kg"
+              width={360}
+              height={430}
+              priority
+            />
+            <Image
+              className="hero-product hero-product-left"
+              src="/images/products/rua_chen_huong_que_3.6kg.jpg"
+              alt="Nước rửa chén Dunix8 hương Quế"
+              width={240}
+              height={280}
+            />
+            <Image
+              className="hero-product hero-product-right"
+              src="/images/products/lau_san_sa_chanh_dunix8_3_6kg.jpg"
+              alt="Nước lau sàn Dunix8 sả chanh"
+              width={240}
+              height={280}
+            />
+          </div>
         </div>
       </section>
 

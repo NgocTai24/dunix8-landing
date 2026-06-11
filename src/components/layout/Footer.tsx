@@ -13,18 +13,24 @@ const quickLinks = [
 const productLinks = [
   { href: "/danh-muc/nuoc-giat", label: "Nước giặt" },
   { href: "/danh-muc/nuoc-xa", label: "Nước xả" },
-  { href: "/danh-muc/combo", label: "Combo giặt xả" },
-  { href: "/san-pham", label: "Chăm sóc quần áo" },
+  { href: "/danh-muc/nuoc-rua-chen", label: "Nước rửa chén" },
+  { href: "/danh-muc/nuoc-lau-san", label: "Nước lau sàn" },
 ];
 
-const promises = [
-  "Sạch sâu vượt trội",
-  "Thơm lâu mềm mại",
-  "An toàn lành tính",
-  "Tiết kiệm hiệu quả",
+const aboutImages = [
+  { src: "/images/about/catalogue-cover.webp", label: "Catalogue" },
+  { src: "/images/about/catalogue-giat-xa.webp", label: "Giặt xả" },
+  { src: "/images/about/catalogue-lau-san.webp", label: "Lau sàn" },
+  { src: "/images/about/catalogue-rua-chen.webp", label: "Rửa chén" },
 ];
 
-const socialItems = ["F", "T", "YT", "Z", "IG"];
+const socialItems = ["F", "T", "YT", "Z"];
+
+const trustItems = [
+  "Sản phẩm chính hãng",
+  "Chất lượng đạt chuẩn",
+  "An toàn cho gia đình",
+];
 
 export function Footer() {
   return (
@@ -36,23 +42,26 @@ export function Footer() {
               className="footer-logo"
               src="/images/logo/logo.jpg"
               alt="Logo Dunix8"
-              width={260}
-              height={120}
+              width={220}
+              height={92}
             />
           </Link>
           <p>
-            Dunix8 mang đến giải pháp giặt giũ hiệu quả với công nghệ hiện đại,
-            hương thơm bền lâu và an toàn cho cả gia đình.
+            Dunix8 mang đến giải pháp giặt giũ và chăm sóc nhà cửa hiện đại,
+            thơm sạch, tiện dụng cho gia đình Việt.
           </p>
-          <div className="promise-grid">
-            {promises.map((item) => (
+          <div className="social-row" aria-label="Mạng xã hội">
+            {socialItems.map((item) => (
               <span key={item}>{item}</span>
             ))}
           </div>
         </section>
 
         <section className="footer-links" aria-label="Liên kết nhanh">
-          <h3>Liên kết nhanh</h3>
+          <h3>
+            <span className="footer-title-icon">L</span>
+            Liên kết
+          </h3>
           {quickLinks.map((item) => (
             <Link href={item.href} key={item.href}>
               {item.label}
@@ -61,7 +70,10 @@ export function Footer() {
         </section>
 
         <section className="footer-links footer-categories" aria-label="Danh mục sản phẩm">
-          <h3>Danh mục sản phẩm</h3>
+          <h3>
+            <span className="footer-title-icon">D</span>
+            Danh mục
+          </h3>
           {productLinks.map((item) => (
             <Link href={item.href} key={item.href}>
               {item.label}
@@ -70,34 +82,49 @@ export function Footer() {
         </section>
 
         <section className="footer-contact" aria-label="Liên hệ với chúng tôi">
-          <h3>Liên hệ với chúng tôi</h3>
+          <h3>
+            <span className="footer-title-icon">C</span>
+            Liên hệ
+          </h3>
           <strong>{site.hotline}</strong>
           <p>{site.email}</p>
           <p>Tân Luật, Cồng Chính, Thanh Hóa, Việt Nam</p>
-          <div className="social-row" aria-label="Mạng xã hội">
-            {socialItems.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
         </section>
 
-        <section className="footer-showcase" aria-label="Catalogue sản phẩm Dunix8">
-          <div className="footer-product">
-            <Image
-              src="/images/about/catalogue-cover.webp"
-              alt="Catalogue sản phẩm Dunix8"
-              fill
-              sizes="(max-width: 900px) 80vw, 24vw"
-            />
+        <section className="footer-showcase" aria-label="Hình ảnh sản phẩm nổi bật">
+          <h3>
+            <span className="footer-title-icon">A</span>
+            Hình ảnh sản phẩm nổi bật
+          </h3>
+          <div className="footer-about-grid">
+            {aboutImages.map((item) => (
+              <Link className="footer-about-card" href="/gioi-thieu" key={item.src}>
+                <Image
+                  src={item.src}
+                  alt={`${item.label} Dunix8`}
+                  fill
+                  sizes="(max-width: 900px) 45vw, 11vw"
+                />
+                <span>{item.label}</span>
+              </Link>
+            ))}
           </div>
         </section>
       </div>
 
+      <div className="footer-wave" aria-hidden="true">
+        <span />
+      </div>
+
+      <div className="footer-trust">
+        {trustItems.map((item) => (
+          <span key={item}>{item}</span>
+        ))}
+      </div>
+
       <div className="footer-bottom">
         <span>© 2026 Dunix8. All rights reserved.</span>
-        <span>
-          Sản phẩm chính hãng - Chất lượng đạt chuẩn - Vì cuộc sống tươi đẹp hơn
-        </span>
+        <span>Sản phẩm chính hãng - Chất lượng đạt chuẩn</span>
       </div>
     </footer>
   );
