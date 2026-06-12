@@ -8,12 +8,6 @@ const navItems = [
   { href: "/", label: "Trang chủ", match: "exact" },
   { href: "/gioi-thieu", label: "Giới thiệu", match: "prefix" },
   { href: "/san-pham", label: "Sản phẩm", hasDropdown: true, match: "prefix" },
-  {
-    href: "/danh-muc/nuoc-giat",
-    label: "Danh mục",
-    hasDropdown: true,
-    match: "category",
-  },
   { href: "/tin-tuc", label: "Tin tức", match: "prefix" },
   { href: "/lien-he", label: "Liên hệ", match: "prefix" },
 ];
@@ -21,10 +15,6 @@ const navItems = [
 function isActive(pathname: string, item: (typeof navItems)[number]) {
   if (item.match === "exact") {
     return pathname === item.href;
-  }
-
-  if (item.match === "category") {
-    return pathname.startsWith("/danh-muc");
   }
 
   return pathname === item.href || pathname.startsWith(`${item.href}/`);

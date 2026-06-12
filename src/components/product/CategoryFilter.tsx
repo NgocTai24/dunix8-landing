@@ -9,12 +9,12 @@ export function CategoryFilter({ activeSlug }: CategoryFilterProps) {
   return (
     <div className="category-filter">
       <Link className={!activeSlug ? "active" : ""} href="/san-pham">
-        Tat ca
+        Tất cả
       </Link>
       {categories.map((category) => (
         <Link
           className={activeSlug === category.slug ? "active" : ""}
-          href={`/danh-muc/${category.slug}`}
+          href={`/san-pham?category=${category.slug}`}
           key={category.slug}
         >
           {category.name}

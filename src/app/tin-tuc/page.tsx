@@ -1,5 +1,4 @@
 import { NewsGrid } from "@/components/news/NewsGrid";
-import { SectionTitle } from "@/components/common/SectionTitle";
 import { getAllNews } from "@/lib/news";
 
 export const metadata = {
@@ -8,12 +7,15 @@ export const metadata = {
 
 export default function NewsPage() {
   return (
-    <section className="section page-intro news-page">
-      <SectionTitle
-        eyebrow="Tin tức"
-        title="Cập nhật hoạt động và kiến thức từ Dunix8"
-        description="Các bài viết giới thiệu hoạt động công ty, thông tin sản phẩm và kinh nghiệm chăm sóc nhà cửa."
-      />
+    <section className="news-page">
+      <div className="news-page-heading">
+        <p className="contact-badge">Tin tức Dunix8</p>
+        <h1>Tin tức Dunix8</h1>
+        <p>
+          Cập nhật những thông tin mới nhất về hoạt động doanh nghiệp, sản phẩm
+          mới, chính sách bán hàng và những câu chuyện thương hiệu.
+        </p>
+      </div>
       <NewsGrid articles={getAllNews()} />
     </section>
   );

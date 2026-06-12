@@ -11,10 +11,10 @@ const quickLinks = [
 ];
 
 const productLinks = [
-  { href: "/danh-muc/nuoc-giat", label: "Nước giặt" },
-  { href: "/danh-muc/nuoc-xa", label: "Nước xả" },
-  { href: "/danh-muc/nuoc-rua-chen", label: "Nước rửa chén" },
-  { href: "/danh-muc/nuoc-lau-san", label: "Nước lau sàn" },
+  { href: "/san-pham?category=nuoc-giat", label: "Nước giặt" },
+  { href: "/san-pham?category=nuoc-xa", label: "Nước xả" },
+  { href: "/san-pham?category=nuoc-rua-chen", label: "Nước rửa chén" },
+  { href: "/san-pham?category=nuoc-lau-san", label: "Nước lau sàn" },
 ];
 
 const aboutImages = [

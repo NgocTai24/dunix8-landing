@@ -1,6 +1,5 @@
-import { CategoryFilter } from "@/components/product/CategoryFilter";
-import { ProductGrid } from "@/components/product/ProductGrid";
-import { SectionTitle } from "@/components/common/SectionTitle";
+import { Suspense } from "react";
+import { ProductCatalog } from "@/components/product/ProductCatalog";
 import { getAllProducts } from "@/lib/products";
 
 export const metadata = {
@@ -12,13 +11,9 @@ export default function ProductsPage() {
 
   return (
     <section className="section page-intro products-page">
-      <SectionTitle
-        eyebrow="Danh mục"
-        title="Sản phẩm Dunix8"
-        description="Lọc nhanh theo dòng sản phẩm và chuyển đến trang chi tiết để xem lợi ích, mùi hương và thông tin sử dụng."
-      />
-      <CategoryFilter />
-      <ProductGrid products={products} />
+      <Suspense fallback={null}>
+        <ProductCatalog products={products} />
+      </Suspense>
     </section>
   );
 }
