@@ -25,7 +25,7 @@ export function NewsCard({ article, variant = "compact" }: NewsCardProps) {
       </Link>
       <div className="news-card-body">
         <div className="news-card-meta">
-          <span>Dunix8 news</span>
+          <span>Dunix8 News</span>
         </div>
         <h3>
           <Link href={`/tin-tuc/${article.slug}`}>{article.title}</Link>

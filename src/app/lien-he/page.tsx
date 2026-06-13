@@ -32,8 +32,7 @@ export default function ContactPage() {
         </h1>
         <p>
           Gửi thông tin nhu cầu, khu vực bạn đang hoạt động và sản lượng dự kiến.
-          Đội ngũ Dunix8 sẽ phản hồi nhanh chóng với chính sách phù hợp nhất
-          dành cho bạn.
+          Đội ngũ Dunix8 sẽ phản hồi nhanh chóng với chính sách phù hợp nhất dành cho bạn.
         </p>
         <div className="contact-divider" />
         <div className="contact-info-grid">

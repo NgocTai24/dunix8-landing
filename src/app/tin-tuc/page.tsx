@@ -12,8 +12,8 @@ export default function NewsPage() {
         <p className="contact-badge">Tin tức Dunix8</p>
         <h1>Tin tức Dunix8</h1>
         <p>
-          Cập nhật những thông tin mới nhất về hoạt động doanh nghiệp, sản phẩm
-          mới, chính sách bán hàng và những câu chuyện thương hiệu.
+          Cập nhật những thông tin mới nhất về hoạt động doanh nghiệp, sản phẩm mới,
+          chính sách bán hàng và những câu chuyện thương hiệu.
         </p>
       </div>
       <NewsGrid articles={getAllNews()} />

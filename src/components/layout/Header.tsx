@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/", label: "Trang chủ", match: "exact" },
-  { href: "/gioi-thieu", label: "Giới thiệu", match: "prefix" },
   { href: "/san-pham", label: "Sản phẩm", hasDropdown: true, match: "prefix" },
   { href: "/tin-tuc", label: "Tin tức", match: "prefix" },
+  { href: "/gioi-thieu", label: "Giới thiệu", match: "prefix" },
   { href: "/lien-he", label: "Liên hệ", match: "prefix" },
 ];
 

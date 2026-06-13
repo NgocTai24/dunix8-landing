@@ -9,7 +9,7 @@ const values = [
   {
     title: "Sạch sâu",
     description:
-      "Công thức làm sạch hiệu quả, hỗ trợ đánh bay vết bẩn thường gặp trong sinh hoạt hằng ngày.",
+      "Công thức hỗ trợ đánh bay vết bẩn thường gặp, giúp việc chăm sóc nhà cửa nhẹ nhàng hơn.",
   },
   {
     title: "Thơm lâu",
@@ -19,8 +19,15 @@ const values = [
   {
     title: "An toàn",
     description:
-      "Định hướng sản phẩm thân thiện với gia đình, dễ sử dụng và phù hợp nhiều nhu cầu chăm sóc nhà cửa.",
+      "Định hướng sản phẩm thân thiện với gia đình, dễ sử dụng và phù hợp nhiều nhu cầu làm sạch.",
   },
+];
+
+const milestones = [
+  { value: "10+", label: "Năm kinh nghiệm" },
+  { value: "50+", label: "Sản phẩm chất lượng" },
+  { value: "1000+", label: "Điểm bán toàn quốc" },
+  { value: "1 triệu+", label: "Khách hàng tin dùng" },
 ];
 
 const productLines = [
@@ -41,12 +48,6 @@ const productLines = [
   },
 ];
 
-const stats = [
-  { value: "04+", label: "Nhóm sản phẩm chủ lực" },
-  { value: "08h", label: "Tư vấn mỗi ngày" },
-  { value: "100%", label: "Tập trung vào trải nghiệm gia đình" },
-];
-
 export default function AboutPage() {
   return (
     <>
@@ -55,8 +56,8 @@ export default function AboutPage() {
           <p className="eyebrow">Về Dunix8</p>
           <h1>Giải pháp chăm sóc nhà cửa cho cuộc sống sạch thơm mỗi ngày</h1>
           <p>
-            Dunix8 phát triển các sản phẩm giặt xả và vệ sinh gia dụng với tinh
-            thần hiện đại, tươi sáng và gần gũi với gia đình Việt.
+            Dunix8 phát triển các sản phẩm giặt xả và vệ sinh gia dụng với tinh thần hiện đại,
+            tươi sáng và gần gũi với gia đình Việt.
           </p>
           <div className="hero-actions">
             <Link className="button primary" href="/san-pham">
@@ -85,15 +86,12 @@ export default function AboutPage() {
         </div>
         <div className="story-copy">
           <p>
-            Chúng tôi tin rằng một ngôi nhà sạch sẽ không chỉ đến từ khả năng
-            làm sạch, mà còn từ cảm giác an tâm khi sử dụng sản phẩm mỗi ngày.
-            Vì vậy Dunix8 theo đuổi những công thức dễ dùng, hương thơm dễ chịu
-            và hình ảnh sản phẩm rõ ràng, đáng tin cậy.
+            Chúng tôi tin rằng một ngôi nhà sạch sẽ không chỉ đến từ khả năng làm sạch,
+            mà còn từ cảm giác an tâm khi sử dụng sản phẩm mỗi ngày.
           </p>
           <p>
-            Từ nước giặt, nước xả đến các dòng vệ sinh gia dụng, Dunix8 hướng
-            đến trải nghiệm đồng bộ: sạch hơn, thơm hơn và tiện lợi hơn cho cả
-            gia đình lẫn hệ thống đại lý phân phối.
+            Từ nước giặt, nước xả đến các dòng vệ sinh gia dụng, Dunix8 hướng đến trải nghiệm
+            đồng bộ: sạch hơn, thơm hơn và tiện lợi hơn cho gia đình lẫn hệ thống đại lý phân phối.
           </p>
         </div>
       </section>
@@ -115,8 +113,8 @@ export default function AboutPage() {
           <p className="eyebrow">Danh mục nổi bật</p>
           <h2>Hệ sản phẩm đồng hành cùng gia đình</h2>
           <p>
-            Những hình ảnh catalogue bạn cung cấp được đặt thành các nhóm sản
-            phẩm rõ ràng để khách hàng nhanh chóng nắm được Dunix8 đang bán gì.
+            Những hình ảnh catalogue được đặt thành các nhóm sản phẩm rõ ràng để khách hàng
+            nhanh chóng nắm được Dunix8 đang cung cấp những giải pháp nào.
           </p>
         </div>
         <div className="product-line-grid">
@@ -141,11 +139,11 @@ export default function AboutPage() {
 
       <section className="about-section about-commitment">
         <div>
-          <p className="eyebrow">Cam kết của chúng tôi</p>
+          <p className="eyebrow">Dunix8 hôm nay</p>
           <h2>Đẹp ở hình ảnh, chắc ở chất lượng, rõ ràng trong tư vấn</h2>
         </div>
         <div className="stats-grid">
-          {stats.map((item) => (
+          {milestones.map((item) => (
             <div key={item.label}>
               <strong>{item.value}</strong>
               <span>{item.label}</span>
